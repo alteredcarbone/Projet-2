@@ -133,7 +133,30 @@ a:hover {
 	margin-bottom: 1em;
 }
 
+#filters {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-bottom: 40px;
+}
 
+#filters button {
+	padding: 5px 20px;
+	border: 1px solid #1D6154;
+	background-color: white;
+	color: #1D6154;
+	border-radius: 60px;
+	font-weight: 600;
+	font-size: 16px;
+	cursor: pointer;
+	font-family: 'Work Sans';
+	
+}
+
+#filters button:hover {
+	background-color: #1D6154;
+	color: white;
+}
 
 
 

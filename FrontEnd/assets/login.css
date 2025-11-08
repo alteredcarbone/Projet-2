@@ -1,0 +1,85 @@
+body {
+    background: #FFFBF2;
+}
+
+.login {
+    width: 100%;
+    max-width: 380px;
+    margin: 80px auto;
+    text-align: center;
+    font-family: 'Work Sans';
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;              
+  align-items: stretch;   
+}
+
+.login .title {
+    font-size: 30px;
+    color: #1D6154;
+    margin-bottom: 50px;
+    font-family: 'Syne';
+    font-weight: 700;
+}
+
+
+.login label {
+    font-family: 'Work Sans';
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    color: #3D3D3D;
+    font-weight: 600;
+}
+
+
+.login input {
+    width: 100%;
+    padding: 20px ;
+    border: none;
+    background: white;
+    font-size: 15px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+    margin-bottom: 20px;
+}
+
+
+.login button {
+    font-family: 'Syne';
+    align-self: center;     
+    padding: 12px 50px;
+    border-radius: 60px;
+    border: none;
+    background: #1D6154;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    
+}
+
+.login button:hover {
+    background: #15463B;
+}
+
+
+.login a {
+    font-size: 14px;
+    color: #1D6154;
+    text-decoration: underline;
+}
+
+.login a,
+.login .forgot {
+    display: inline-block;  
+    align-self: center;     
+    margin-top: 15px;
+    text-decoration: underline;
+    color: black;
+}
+
+footer {
+    margin-top: 305px;
+}
