@@ -10,7 +10,7 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="./assets/login.css">
-	
+	<script type="module" src="./javascript/login.js"></script>
 </head>
 <body>
 <header>
@@ -39,7 +39,9 @@
             <label for="password">Mot de passe</label>
             <input type="password" id="password" name="password" >
 
-            <button type="submit">Se connecter</button>
+			<p id="login-error"></p>
+
+            <button type="submit" id="login">Se connecter</button>
             <a class="forgot" href="#" >Mot de passe oublié</a>
 
         </form>

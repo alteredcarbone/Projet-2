@@ -53,6 +53,22 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
+.editionbar {
+	display: flex;
+	justify-content: center;
+	width: 100% ;
+	background-color: black;
+	color: white;
+	align-items: center;
+	height: 60px;
+	margin: 0;
+}
+
+.editionbar .fa-regular {
+	margin: 15px;
+}
+
 header {
 	display: flex;
 	justify-content: space-between;
@@ -97,6 +113,7 @@ nav li {
 	
 }
 
+
 nav a {
 	text-decoration: none;
 	color: #1D6154;
@@ -133,6 +150,25 @@ a:hover {
 	margin-bottom: 1em;
 }
 
+.portfolio-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+.edit {
+	color: black;
+	font-size: 16px;
+	text-decoration: none;
+	margin-bottom: 30px;
+}
+
+.edit .fa-regular{
+	margin: 0 10px 0 25px;
+	
+}
+
 #filters {
 	display: flex;
 	justify-content: center;
@@ -167,11 +203,12 @@ a:hover {
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
 	
+	
 }
 
 .gallery img {
 	width: 100%;
-
+	margin-bottom: 10px;
 }
 #contact {
 	width: 50%;

@@ -1,8 +1,9 @@
-   const WORKS_API = "http://localhost:5678/api/works";
+const WORKS_API = "http://localhost:5678/api/works";
 const CATEGORIES_API = "http://localhost:5678/api/categories";
 
 const gallery = document.getElementById("gallery");
 const filtersContainer = document.getElementById("filters");
+
 
 let works = [];       
 let categories = [];  
@@ -55,6 +56,9 @@ fetch(CATEGORIES_API)
   });
 
 
+
+
+function GetWorks() {
 fetch(WORKS_API)
   .then(res => res.json())
   .then(data => {
@@ -66,6 +70,8 @@ fetch(WORKS_API)
     gallery.innerHTML = "<p>Impossible de charger la galerie.</p>";
   });
 
+}
+GetWorks();
 
 function displayWorks(list) {
   gallery.innerHTML = "";
@@ -81,4 +87,48 @@ function displayWorks(list) {
   });
 
   gallery.appendChild(frag);
+}
+
+const loginLink   = document.getElementById("login");
+const logoutLink  = document.getElementById("logout");
+const editionBar  = document.getElementById("editionbar");
+const filtersWrap = document.getElementById("filters");
+const edit = document.getElementById("edit");
+
+
+function safeDisplay(el, value) {
+  if (el) el.style.display = value;
+}
+
+function applyAuthUI(isLogged) {
+  if (isLogged) {
+    // connecté
+    safeDisplay(loginLink,  "none");
+    safeDisplay(logoutLink, "inline");
+    safeDisplay(editionBar, "flex");
+    safeDisplay(filtersWrap, "none");
+    safeDisplay(edit, "block")   
+  } else {
+    // non connecté
+    safeDisplay(loginLink,  "inline");
+    safeDisplay(logoutLink, "none");
+    safeDisplay(editionBar, "none");
+    safeDisplay(filtersWrap, "flex");
+    safeDisplay(edit, "none");
+  }
+}
+
+
+const token = localStorage.getItem("token");
+applyAuthUI(!!token);
+
+
+if (logoutLink) {
+  logoutLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    applyAuthUI(false);
+    
+    window.location.href = "index.html";
+  });
 }
