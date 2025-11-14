@@ -119,6 +119,7 @@ function applyAuthUI(isLogged) {
 }
 
 
+
 const token = localStorage.getItem("token");
 applyAuthUI(!!token);
 
@@ -132,3 +133,32 @@ if (logoutLink) {
     window.location.href = "index.html";
   });
 }
+
+const modal = document.getElementById ("myEdit");
+const openedit = document.getElementById ("edit");
+const closeedit = document.getElementById ("close");
+const addphoto = document.getElementById ("add-photo");
+const modalform =document.getElementById ("modalform");
+
+modal.style.display = "none"
+modalform.style.display = "none"
+
+openedit.addEventListener("click", (e) => {
+  e.preventDefault();
+  modal.style.display = "flex";
+})
+
+closeedit.addEventListener("click", () => {
+  modal.style.display = "none"
+})
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+addphoto.addEventListener("click", () => {
+  modal.style.display = "none";
+  modalform.style.display = "flex";
+})

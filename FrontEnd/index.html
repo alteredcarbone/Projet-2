@@ -53,9 +53,34 @@
 	<section id="portfolio">
 		<div class="portfolio-header">
 		<h2>Mes Projets</h2>
-			<a href="#" id="edit" class="edit">
+		
+			<a id="edit" class="edit">
 				<i class="fa-regular fa-pen-to-square"></i>modifier
 			</a>
+		</div>
+		<div id="myEdit" class="myEdit">
+  			<div class="edit-content">
+    			<span class="close" id="close">&times;</span>
+    			<h2>Galerie photo</h2>
+    			<p></p>
+				<hr class="separator">
+				<button id="add-photo" class="add-photo">Ajouter une photo</button>
+  			</div>
+			
+		</div>
+		<div id="modalform">
+			<span>&times;</span>
+			<h2> Ajout photo</h2>
+			<form>
+				<label>Titre</label>
+				<input type="text" id="title" class="title">
+				<label>Catégorie</label>
+				<select></select>
+			</form>
+			<button class="add-photo">Valider</button>
+		</div>
+		
+		</div>
 		</div>
 			<div id="filters"></div>
 			<div class="gallery" id="gallery"></div>
