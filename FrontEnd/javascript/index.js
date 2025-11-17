@@ -3,6 +3,7 @@ const CATEGORIES_API = "http://localhost:5678/api/categories";
 
 const gallery = document.getElementById("gallery");
 const filtersContainer = document.getElementById("filters");
+const modalGallery = document.getElementById("modal-gallery");
 
 
 let works = [];       
@@ -27,6 +28,7 @@ fetch(CATEGORIES_API)
       btn.textContent = cat.name;
       btn.dataset.id = String(cat.id);
       filtersContainer.appendChild(btn);
+
     });
 
     
@@ -63,7 +65,8 @@ fetch(WORKS_API)
   .then(res => res.json())
   .then(data => {
     works = data;
-    displayWorks(works); 
+    displayWorks(works);
+    displaymodalworks(works);
   })
   .catch(err => {
     console.error("Erreur works:", err);
@@ -76,7 +79,6 @@ GetWorks();
 function displayWorks(list) {
   gallery.innerHTML = "";
   const frag = document.createDocumentFragment();
-
   list.forEach(item => {
     const figure = document.createElement("figure");
     figure.innerHTML = `
@@ -84,9 +86,30 @@ function displayWorks(list) {
       <figcaption>${item.title}</figcaption>
     `;
     frag.appendChild(figure);
+
+    
+  });
+  
+  gallery.appendChild(frag);
+}
+
+
+function displaymodalworks(list) {
+  if (!modalGallery) return; 
+
+  modalGallery.innerHTML = "";
+  const frag = document.createDocumentFragment();
+
+  list.forEach(item => {
+    const figure = document.createElement("figure");
+    figure.innerHTML = `
+      <img src="${item.imageUrl}" alt="${item.title}">
+      <figcaption><i class="fa-solid fa-trash-can"></i></figcaption>
+    `;
+    frag.appendChild(figure);
   });
 
-  gallery.appendChild(frag);
+  modalGallery.appendChild(frag);
 }
 
 const loginLink   = document.getElementById("login");
