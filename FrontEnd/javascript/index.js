@@ -191,6 +191,10 @@ applyAuthUI(!!token);
 if (logoutLink) {
   logoutLink.addEventListener("click", (e) => {
     e.preventDefault();
+
+    modal.style.display = "none";
+    modal_form.style.display = "none";
+
     localStorage.removeItem("token");
     applyAuthUI(false);
     
