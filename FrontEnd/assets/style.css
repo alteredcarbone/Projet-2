@@ -222,7 +222,6 @@ a:hover {
     border-radius: 10px;
     width: 630px;
 	height: 670px;
-    gap: 20px;
     position: relative;
 }
 
@@ -236,7 +235,8 @@ a:hover {
 	font-family: "Work Sans";
 	color: black;
 	font-weight: 400;
-	margin: 30px !important;
+	margin: 60px 0 0 0!important;
+	
 }
 
  .url-image {
@@ -250,6 +250,7 @@ a:hover {
     border-radius: 5px;
     position: relative;
 	overflow: hidden;
+	margin-top: 42px;
 	
 }
 
@@ -299,6 +300,7 @@ button {
 	height: 50px;
 	padding: 0 0 0 16px;
 	font: 14px;
+	margin-bottom: 46px;
 }
 
 .modal-form .title {
@@ -327,19 +329,25 @@ button {
 	justify-content: center;
 	align-items: center;
 	color: white;
-	cursor: default;
+	cursor: pointer;
+	
 }
 
-.modal-form button.active {
+.modal-form .validate-btn {
+	background-color: #a7a7a7;
+	width: 237px;
+	height: 36px;
+	margin-top: 32px;
+}
+
+
+
+.modal-form .validate-btn.active {
 	background-color: #1D6154 !important;
 	cursor: pointer;
 }
 
-button p {
-	color: #306685;
-	font-weight: 600;
-	font-family: "Work Sans";
-}
+
 
 
 
@@ -373,6 +381,7 @@ button p {
 	font-family: "Work Sans";
 	font-weight: 500;
 	font-size: 14px;
+	margin: 30px 0 10px 0;
 }
 
 .close {

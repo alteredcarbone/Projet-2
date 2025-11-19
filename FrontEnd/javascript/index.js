@@ -260,7 +260,7 @@ upload_Image_Input.addEventListener("change", () => {
 
 const title_Input = document.getElementById("title");
 const category_Select = document.querySelector(".modal-image");
-const validate_btn = document.querySelector("#modalform .add-photo");
+const validate_btn = document.getElementById("validate-btn");
 
 let image_Selected = false;
 
